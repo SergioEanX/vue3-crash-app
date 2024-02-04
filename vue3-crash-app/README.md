@@ -1,6 +1,7 @@
 # VUE3 crash App   
 by John Komarnicki  
-[main repo](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGxyZkFxSkc2bnI3c1VDbXM4TWFTb19oSEstQXxBQ3Jtc0tuUlRhSFl4MXloRDlvaml6dlZDOGF3cHBDb2dxU0l4X0hFRmtkZXN1aU5XSzFfWlRLUlhncm5nTnpYUjhPd3BlcXY3LXJ6ZVhBeUk2OGpQYk9wZDViOC1WaWIybnBvSjFnNzNGNEwwUkdkcDh0QUNBZw&q=https%3A%2F%2Fgithub.com%2Fjohnkomarnicki%2Fvue-3-crash-course&v=KTFH4P8unUQ)
+[Main repo code](https://github.com/johnkomarnicki/vue-3-crash-course)   
+
 
 [Crash Course](https://www.youtube.com/watch?v=KTFH4P8unUQ)   
 
@@ -56,3 +57,16 @@ pnpm install -D
 ```
 ## Resources
 [How to use Composition API the right way ](https://dev.to/the_one/are-you-using-composition-api-the-right-way-4jmm)   
+[Vue 3 Reactive Data | Ref Vs Reactive in 10 Minutes! (ish)](https://www.youtube.com/watch?v=OaUpEyz4zxs)   
+[Why I Love Vue 3's Composition API](https://dev.to/mokkapps/why-i-love-vue-3s-composition-api-2n3m)   
+[How to Use Vue Router: A Complete Tutorial](https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/)  
+[What's new in Vue 3.4?](https://blog.ninja-squad.com/2023/12/29/what-is-new-vue-3.4/)   
+[Tailwind CSS Fundamentals](https://vueschool.io/courses/tailwind-css-fundamentals)   
+[20++ Essential Articles for Vue.js (Vue 3) Beginner](https://dev.to/ansonch/20-essential-articles-for-vuejs-vue-3-beginner-1dmf)
+
+
+[Learn TypeScript Basics in this Beginner's Guide](https://www.freecodecamp.org/news/learn-typescript-basics/)
+[Getting started with Vue.js3 and Typescript: A Beginners Guide](https://earnkay.hashnode.dev/getting-started-with-vuejs3-and-typescript-a-beginners-guide)   
+[Easy State Management in Vue 3 Using Pinia](https://javascript.plainenglish.io/pinia-state-management-in-vue-3-d093a33d66c)
+
+[John Komarnicki Youtube channel](https://www.youtube.com/@JohnKomarnicki)

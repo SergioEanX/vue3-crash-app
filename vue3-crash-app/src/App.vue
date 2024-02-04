@@ -10,7 +10,7 @@ import TodoHeader from '@/components/TodoHeader.vue'
   <RouterView />
 </template>
 
-<style lang="css">
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap");
 
 * {
@@ -20,7 +20,7 @@ import TodoHeader from '@/components/TodoHeader.vue'
   box-sizing: border-box;
 }
 
-.container {
+container {
   max-width: 1100px;
   margin: 0 auto;
 }
