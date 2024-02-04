@@ -1,6 +1,6 @@
 # VUE3 crash App   
-by John Komarnicki
-
+by John Komarnicki  
+[main repo](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGxyZkFxSkc2bnI3c1VDbXM4TWFTb19oSEstQXxBQ3Jtc0tuUlRhSFl4MXloRDlvaml6dlZDOGF3cHBDb2dxU0l4X0hFRmtkZXN1aU5XSzFfWlRLUlhncm5nTnpYUjhPd3BlcXY3LXJ6ZVhBeUk2OGpQYk9wZDViOC1WaWIybnBvSjFnNzNGNEwwUkdkcDh0QUNBZw&q=https%3A%2F%2Fgithub.com%2Fjohnkomarnicki%2Fvue-3-crash-course&v=KTFH4P8unUQ)
 
 [Crash Course](https://www.youtube.com/watch?v=KTFH4P8unUQ)   
 
@@ -48,3 +48,11 @@ pnpm build
 ```sh
 pnpm lint
 ```
+
+PNPM usefult commands:   
+[pnpm install options](https://pnpm.io/cli/install)
+```bash 
+pnpm install -D
+```
+## Resources
+[How to use Composition API the right way ](https://dev.to/the_one/are-you-using-composition-api-the-right-way-4jmm)   
