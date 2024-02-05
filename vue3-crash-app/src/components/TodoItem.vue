@@ -9,12 +9,12 @@ interface Todo  {
 }
 
 const props = defineProps<{
-  todo: Todo; // Use the Todo interface directly
+  todo: Todo; // Use the interface directly
   index: number;
 }>()
 
 // const props = defineProps({
-//   todo: {
+//   todo_: {
 //     type: Object,
 //     required:true,
 //     default: () => {},
