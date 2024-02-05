@@ -3,7 +3,7 @@ import TodoCreate from '@/components/TodoCreate.vue'
 import { Icon } from "@iconify/vue";
 import { uid } from 'uid'
 
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import TodoItem from '@/components/TodoItem.vue'
 
 
@@ -13,6 +13,14 @@ type Todo = {
   isCompleted: boolean|null; // Check for this property
   isEditing: boolean|null;
 };
+const todoList =ref<Todo[]>([]);
+
+
+watch(todoList, ()=>{
+  setTodoListLocalStorage()
+},{
+    deep:true,
+})
 
 const setTodoListLocalStorage =()=>{
   localStorage.setItem(
@@ -36,7 +44,6 @@ const fetchTodoList = ()=>{
   }
 }
 
-const todoList =ref<Todo[]>([]);
 const createTodo =(todo:string)=>{
   const item:Todo={
     id: uid(),
@@ -45,28 +52,28 @@ const createTodo =(todo:string)=>{
     isEditing:null
   }
   todoList.value.push(item)
-  setTodoListLocalStorage()
+  // setTodoListLocalStorage()
 }
 
 const toggleTodoComplete = (todoPos:number)=>{
 
 todoList.value[todoPos].isCompleted = !todoList.value[todoPos].isCompleted;
-  setTodoListLocalStorage()
+  // setTodoListLocalStorage()
 }
 
 const toggleEditTodo =(todoPos:number) =>{
   todoList.value[todoPos].isEditing = !todoList.value[todoPos].isEditing;
-  setTodoListLocalStorage()
+  // setTodoListLocalStorage()
 }
 
 const updateTodo = (todoVal:string,todoPos:number) =>{
 todoList.value[todoPos].todo=todoVal
-  setTodoListLocalStorage()
+  // setTodoListLocalStorage()
 }
 
 const deleteTodo =(todoID:string) =>{
 todoList.value= todoList.value.filter(element => element.id !== todoID);
-  setTodoListLocalStorage()
+  // setTodoListLocalStorage()
 }
 // always get data from localstorage if it does exists
 fetchTodoList()
