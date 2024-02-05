@@ -3,8 +3,9 @@ import TodoCreate from '@/components/TodoCreate.vue'
 import { Icon } from "@iconify/vue";
 import { uid } from 'uid'
 
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import TodoItem from '@/components/TodoItem.vue'
+
 
 
 type Todo = {
@@ -20,6 +21,12 @@ watch(todoList, ()=>{
   setTodoListLocalStorage()
 },{
     deep:true,
+})
+
+const todoCompleted =computed(()=>{
+  return todoList.value.every((item)=>
+    item.isCompleted
+  )
 })
 
 const setTodoListLocalStorage =()=>{
@@ -58,7 +65,7 @@ const createTodo =(todo:string)=>{
 const toggleTodoComplete = (todoPos:number)=>{
 
 todoList.value[todoPos].isCompleted = !todoList.value[todoPos].isCompleted;
-  // setTodoListLocalStorage()
+   setTodoListLocalStorage()
 }
 
 const toggleEditTodo =(todoPos:number) =>{
@@ -96,10 +103,14 @@ fetchTodoList()
     </ul>
     <p class="todos-msg" v-else>
       <Icon icon="noto-v1:sad-but-relieved-face" />
-
       <span>
         You have no todo's to complete! Add one.
       </span>
+    </p>
+    <p v-if="todoCompleted && todoList.length>0" class="todos-msg">
+      <Icon icon="noto-v1:party-popper"></Icon>
+      <span>You have completed all your todos</span>
+
     </p>
   </main>
 </template>
