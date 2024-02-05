@@ -33,14 +33,14 @@ const createTodo=()=>{
   todoState.errMsg="todo value cannot be empty"
 }
 
-console.log(todoState.value)
+// console.log(todoState.value)
 
 
 </script>
 
 <template>
   <div class="input-wrap" :class="{'input-err':todoState.invalid}">
-    <input type="text" v-model="todoState.todo">
+    <input type="text" v-model="todoState.todo" @keyup.enter="createTodo()">
     <todo-button @click="createTodo()"  />
   </div>
   <p v-show="todoState.invalid" class="err-msg">{{todoState.errMsg}}</p>

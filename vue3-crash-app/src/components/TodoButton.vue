@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useFocus } from '@vueuse/core'
+import { onMounted, ref } from 'vue'
+// import { useFocus } from '@vueuse/core'
 
-const btn = ref()
-const { focused } = useFocus(btn, { initialValue: true })
+const btn = ref(null)
+
+const focusBtn = () => {
+  if (btn.value) {
+    btn.value.focus();
+  }
+};
+
+onMounted(focusBtn);
+// const { focused } = useFocus(btn, { initialValue: true })
 </script>
 
 <template>
