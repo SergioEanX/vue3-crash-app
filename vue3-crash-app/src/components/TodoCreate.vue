@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import TodoButton from '@/components/TodoButton.vue'
-import { useFocus } from '@vueuse/core'
 
 interface TodoType {
   todo: string;
