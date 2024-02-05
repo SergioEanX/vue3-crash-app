@@ -29,7 +29,10 @@ defineEmits(["toggle-complete", "edit-todo","update-todo", "delete-todo"])
 
 <template>
   <li>
-    <input type="checkbox" :value="todo.isCompleted" @input="$emit('toggle-complete',index)"/>
+    <input type="checkbox"
+           :value="todo.isCompleted"
+
+           @input="$emit('toggle-complete',index)"/>
     <div class="todo">
       <input v-if="todo.isEditing" type="text" :value="todo.todo" @input="$emit('update-todo',$event.target.value, index)" />
       <span v-else :class="{'completed-todo': todo.isCompleted}">
@@ -87,14 +90,19 @@ li {
     &:checked {
       background-color: #41b080;
     }
+    //.completed-todo{
+    //  background-color: #41b080;
+    //}
+  ;
   }
 
   .todo {
     flex: 1;
 
-    .completed-todo{
+    .completed-todo {
       text-decoration: line-through;
     }
+
     input[type="text"] {
       width: 100%;
       padding: 2px 6px;
