@@ -14,6 +14,27 @@ type Todo = {
   isEditing: boolean|null;
 };
 
+const setTodoListLocalStorage =()=>{
+  localStorage.setItem(
+    "todoList", JSON.stringify(todoList.value)
+  )
+}
+
+const fetchTodoList = ()=>{
+  const savedTodoListString = localStorage.getItem("todoList");
+  if (savedTodoListString) {
+    try {
+      todoList.value = JSON.parse(savedTodoListString);
+    } catch (error) {
+      console.error("Error parsing saved todo list:", error);
+      // Handle the error gracefully, e.g., provide a default empty list
+      todoList.value = [];
+    }
+  } else {
+    // Handle the case where there's no saved todo_ list
+    todoList.value = [];
+  }
+}
 
 const todoList =ref<Todo[]>([]);
 const createTodo =(todo:string)=>{
@@ -24,23 +45,31 @@ const createTodo =(todo:string)=>{
     isEditing:null
   }
   todoList.value.push(item)
+  setTodoListLocalStorage()
 }
 
 const toggleTodoComplete = (todoPos:number)=>{
 
 todoList.value[todoPos].isCompleted = !todoList.value[todoPos].isCompleted;
-
+  setTodoListLocalStorage()
 }
 
 const toggleEditTodo =(todoPos:number) =>{
   todoList.value[todoPos].isEditing = !todoList.value[todoPos].isEditing;
-
+  setTodoListLocalStorage()
 }
 
 const updateTodo = (todoVal:string,todoPos:number) =>{
 todoList.value[todoPos].todo=todoVal
-
+  setTodoListLocalStorage()
 }
+
+const deleteTodo =(todoID:string) =>{
+todoList.value= todoList.value.filter(element => element.id !== todoID);
+  setTodoListLocalStorage()
+}
+// always get data from localstorage if it does exists
+fetchTodoList()
 </script>
 
 <template>
@@ -55,6 +84,7 @@ todoList.value[todoPos].todo=todoVal
                  :index="index"
                  @toggle-complete="toggleTodoComplete"
                  @update-todo="updateTodo"
+                 @delete-todo="deleteTodo"
       @edit-todo="toggleEditTodo"/>
     </ul>
     <p class="todos-msg" v-else>
