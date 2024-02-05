@@ -62,8 +62,8 @@ pnpm install -D
 [How to Use Vue Router: A Complete Tutorial](https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/)  
 [What's new in Vue 3.4?](https://blog.ninja-squad.com/2023/12/29/what-is-new-vue-3.4/)   
 [Tailwind CSS Fundamentals](https://vueschool.io/courses/tailwind-css-fundamentals)   
-[20++ Essential Articles for Vue.js (Vue 3) Beginner](https://dev.to/ansonch/20-essential-articles-for-vuejs-vue-3-beginner-1dmf)
-
+[20++ Essential Articles for Vue.js (Vue 3) Beginner](https://dev.to/ansonch/20-essential-articles-for-vuejs-vue-3-beginner-1dmf)   
+[How to Set Focus on an Input in Vue](https://michaelnthiessen.com/set-focus-on-input-vue)   
 
 [Learn TypeScript Basics in this Beginner's Guide](https://www.freecodecamp.org/news/learn-typescript-basics/)
 [Getting started with Vue.js3 and Typescript: A Beginners Guide](https://earnkay.hashnode.dev/getting-started-with-vuejs3-and-typescript-a-beginners-guide)   
