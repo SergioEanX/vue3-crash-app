@@ -1,20 +1,38 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-const props = defineProps({
-  todo: {
-    type: Object,
-    required:true,
-    default: () => {},
-  },
-});
+
+interface Todo  {
+  id:string;
+  todo: string;
+  isCompleted: boolean|null; // Check for this property
+  isEditing: boolean|null;
+}
+
+const props = defineProps<{
+  todo: Todo; // Use the Todo interface directly
+  index: number;
+}>()
+
+// const props = defineProps({
+//   todo: {
+//     type: Object,
+//     required:true,
+//     default: () => {},
+//   },
+//   index: {
+//     type:Number,
+//     required:true,
+//   }
+// });
+defineEmits(["toggle-complete", "edit-todo","update-todo"])
 </script>
 
 <template>
   <li>
-    <input type="checkbox" :value="todo.isCompleted" />
+    <input type="checkbox" :value="todo.isCompleted" @input="$emit('toggle-complete',index)"/>
     <div class="todo">
-      <input v-if="todo.isEditing" type="text" :value="todo.todo" />
-      <span v-else>
+      <input v-if="todo.isEditing" type="text" :value="todo.todo" @input="$emit('update-todo',$event.target.value, index)" />
+      <span v-else :class="{'completed-todo': todo.isCompleted}">
         {{ todo.todo }}
       </span>
     </div>
@@ -27,6 +45,7 @@ const props = defineProps({
         class="icon check-icon"
         color="41b080"
         width="22"
+        @click="$emit('edit-todo',index)"
       />
       <Icon
         v-else
@@ -34,6 +53,7 @@ const props = defineProps({
         class="icon edit-icon"
         color="41b080"
         width="22"
+        @click="$emit('edit-todo',index)"
       />
       <Icon icon="ph:trash" class="icon trash-icon" color="f95e5e" width="22" />
     </div>
@@ -72,6 +92,9 @@ li {
   .todo {
     flex: 1;
 
+    .completed-todo{
+      text-decoration: line-through;
+    }
     input[type="text"] {
       width: 100%;
       padding: 2px 6px;
