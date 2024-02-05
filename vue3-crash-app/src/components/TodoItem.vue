@@ -29,9 +29,9 @@ defineEmits(["toggle-complete", "edit-todo","update-todo", "delete-todo"])
 
 <template>
   <li>
+<!--           :value="todo_.isCompleted"-->
     <input type="checkbox"
-           :value="todo.isCompleted"
-
+           :checked="todo.isCompleted"
            @input="$emit('toggle-complete',index)"/>
     <div class="todo">
       <input v-if="todo.isEditing" type="text" :value="todo.todo" @input="$emit('update-todo',$event.target.value, index)" />
